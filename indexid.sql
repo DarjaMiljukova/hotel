@@ -59,3 +59,40 @@ UNIQUE NONCLUSTERED (City)
 CREATE UNIQUE INDEX IX_tblEmployee_City
 ON tblEmployee(City)
 WITH IGNORE_DUP_KEY
+
+
+create table tblEmployee(
+Id int Primary key,
+FirstName nvarchar(50),
+LastName nvarchar(50),
+Salary int,
+Gender nvarchar(10),
+City nvarchar(50))
+
+Insert into tblEmployee values(1,'Mike','Sandoz',4500,'Male','New York')
+Insert into tblEmployee values(2,'Sara','Menco',6500,'Female','London')
+Insert into tblEmployee values(3,'John','Barber',2500,'Male','Sydney')
+Insert into tblEmployee values(4,'Pam','Grove',3500,'Female','Toronto')
+Insert into tblEmployee values(5,'James','Mirch',7500,'Male','London')
+
+
+create NonClustered Index IX_tblEmployee_Salary
+On tblEmployee(Salary ASC)
+
+select * from tblEmployee where Salary>4000 and Salary<8000
+
+
+
+
+delete from tblEmployee where Salary =2500
+update tblEmployee set Salary = 9000 where Salary = 7500
+
+
+select * from tblEmployee order by Salary
+
+select * from tblEmployee order by Salary Desc
+
+
+select Salary, COUNT(Salary) as Total
+from tblEmployee
+Group By Salary
