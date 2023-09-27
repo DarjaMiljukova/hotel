@@ -184,7 +184,7 @@ from  tblEmployee
 where Gender = @Gender
 
 
-
+--loomine funktsioon otsing gender
 Create function fnEmployeeDetails(@Gender nvarchar(20))
 Returns Table
 as
