@@ -21,7 +21,7 @@ end
 create table Test1(id int)
 
 
-
+--muuda trigger
 alter trigger trMyFirstTrigger
 on database
 for create_table,alter_table,drop_table
@@ -38,6 +38,8 @@ disable trigger trMyFirstTrigger on database
 
 drop trigger trMyFirstTrigger on database
 
+
+--uuendamine nimi 
 create trigger trReenameTable
 on database
 for rename
@@ -107,7 +109,7 @@ go
 
 
 
-
+--loomine trigger blokeeri kasutaja
 create trigger tr_LogonAuditTriggers
 on all server
 for LOGON
